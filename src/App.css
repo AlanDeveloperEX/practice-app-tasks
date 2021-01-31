@@ -1,0 +1,40 @@
+
+body {
+  background-color: blueviolet;
+}
+.card {
+  background-color: #fff;
+  border-radius: 2px;
+  padding: 10px;
+  width: 80%;
+  max-width: 500px;
+}
+.box_to_do {
+  color: #202020;
+}
+.box_to_do p {
+  border: 2px solid #2020205c;
+  box-shadow: 0 0 10px rgba(0,0,0,0.27);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 3px 0;
+  cursor: pointer;
+}
+.add_to_do {
+  margin: 10px auto;
+  color: #202020;
+  cursor: pointer;
+}
+.custom_modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #202020b5;
+  z-index: 999;
+  transition: all ease-in 0.2s;
+}
+.custom_modal h3 {
+  color: #fff;
+}

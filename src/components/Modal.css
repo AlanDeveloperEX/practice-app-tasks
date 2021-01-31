@@ -1,0 +1,13 @@
+.custom_modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #202020b5;
+  z-index: 999;
+  transition: all ease-in 0.2s;
+}
+.custom_modal h3 {
+  color: #fff;
+}
