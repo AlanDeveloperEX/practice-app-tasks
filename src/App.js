@@ -1,5 +1,6 @@
 import './App.css';
 import {useState} from 'react';
+import Modal from './components/Modal';
 
 var bgColors = { 
   "Default": "transparent",
@@ -37,11 +38,9 @@ function App() {
     // }
 
   ])
-  const [modal, setModal] = useState(false)
 
-  const openModal = () => {
-    setModal(!modal)
-  }
+  const [modal, setModal] = useState(false)
+  const [modalMsg, setModalMsg] = useState(false)
 
   const saveTask = () => {
 
@@ -76,6 +75,13 @@ function App() {
     setTask(done)
   }
 
+  const playstation = () => {
+    alert("Lets play a game");
+
+    setModalMsg(false)
+
+  }
+
   return (
     <>
       <div className="App container-fluid" style={{backgroundColor: bgColors.transparent}}>
@@ -95,27 +101,33 @@ function App() {
                     )
                   }
                 }) : 
-                <p>There is no tasks, lest make anyone.</p>
+                <p>There is no tasks, lets make anyone.</p>
               }
             </div>
-            <div className="add_to_do a_center" onClick={()=> openModal()}>
+            <div className="add_to_do a_center" onClick={()=> setModal(!modal)}>
+              <i className="las la-plus"></i>
+            </div>
+            <div className="add_to_do a_center" onClick={()=> setModalMsg(!modalMsg) }>
               <i className="las la-plus"></i>
             </div>
           </div>
         </div>
       </div>
-      {
-        modal?
-        <div className="custom_modal d_flex a_center j_center text-center">
-          <div className="modal_content">
-            <h3>Add a new task</h3>
-            <input id="newTask" type="text"/>
-            <button onClick={() => saveTask()}>Save</button>
-          </div>
-        </div>
-        :
-          ''
-      }
+
+        <Modal 
+          title="Tasks List"
+          menssage="Bla bla ..."
+          show={modal}
+          action={saveTask}
+        />
+
+        <Modal 
+          title="Show Mensagem"
+          menssage="Bla bla ..."
+          show={modalMsg}
+          action={playstation}
+        />
+
     </>
   );
 }
